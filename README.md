@@ -182,10 +182,19 @@ For questions or issues with the website, please contact the development team.
 
 ---
 
-**Version**: 1.0.4  
+**Version**: 1.0.5  
 **Last Updated**: 2024
 
 ## Changelog
+
+### v1.0.5
+- Modernized homepage design with brighter, more contemporary styling
+- Updated color scheme to vibrant blue (#4F8FE6) with coral accents (#FF7B7B)
+- Enhanced typography with larger headings and improved spacing
+- Added gradient accent lines and modern card designs
+- Improved hero section overlay (slate/gray-blue at 75% opacity)
+- Updated button styling across all pages with consistent modern design
+- Enhanced service cards with gradient backgrounds and hover effects
 
 ### v1.0.4
 - Added individual team member pages with full bios

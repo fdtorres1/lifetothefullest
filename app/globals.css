@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
+  --background: #fafbfc;
   --foreground: #1a1a1a;
-  --primary: #4a90a4;
-  --primary-dark: #3a7282;
-  --accent: #e8b86d;
-  --accent-dark: #d4a55c;
+  --primary: #4F8FE6;
+  --primary-dark: #3D7BD6;
+  --primary-light: #6BA3F0;
+  --accent: #FF7B7B;
+  --accent-dark: #FF6B6B;
   --text-muted: #6b7280;
 }
 
@@ -31,11 +32,11 @@ html {
 
 /* Custom button styles */
 .btn-primary {
-  @apply bg-[#4a90a4] text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#3a7282] focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:ring-offset-2;
+  @apply bg-[#4F8FE6] text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#3D7BD6] focus:outline-none focus:ring-2 focus:ring-[#4F8FE6] focus:ring-offset-2;
 }
 
 .btn-secondary {
-  @apply bg-white text-[#4a90a4] border-2 border-[#4a90a4] px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#f0f7f9] focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:ring-offset-2;
+  @apply bg-white text-[#4F8FE6] border-2 border-[#4F8FE6] px-6 py-3 rounded-lg font-medium transition-colors hover:bg-[#f0f5ff] focus:outline-none focus:ring-2 focus:ring-[#4F8FE6] focus:ring-offset-2;
 }
 
 /* Section spacing */

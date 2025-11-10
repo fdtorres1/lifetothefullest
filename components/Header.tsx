@@ -12,24 +12,24 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-[#4a90a4]">
+            <span className="text-2xl font-bold text-[#4F8FE6]">
               Life to the Fullest
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-[#4a90a4] transition-colors">
+            <Link href="/" className="text-gray-700 hover:text-[#4F8FE6] transition-colors">
               Home
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-[#4a90a4] transition-colors">
+            <Link href="/about" className="text-gray-700 hover:text-[#4F8FE6] transition-colors">
               About Us
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-[#4a90a4] transition-colors">
+            <Link href="/services" className="text-gray-700 hover:text-[#4F8FE6] transition-colors">
               Services
             </Link>
             <div className="relative group">
-              <button className="text-gray-700 hover:text-[#4a90a4] transition-colors flex items-center">
+              <button className="text-gray-700 hover:text-[#4F8FE6] transition-colors flex items-center">
                 Locations
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -44,10 +44,10 @@ export default function Header() {
                 </Link>
               </div>
             </div>
-            <Link href="/resources" className="text-gray-700 hover:text-[#4a90a4] transition-colors">
+            <Link href="/resources" className="text-gray-700 hover:text-[#4F8FE6] transition-colors">
               Resources
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-[#4a90a4] transition-colors">
+            <Link href="/contact" className="text-gray-700 hover:text-[#4F8FE6] transition-colors">
               Contact
             </Link>
             <a

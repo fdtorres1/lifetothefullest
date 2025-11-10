@@ -205,10 +205,18 @@ export default function OakBrookLocation() {
             Contact us today to schedule an appointment or learn more about our services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary bg-white text-[#4a90a4] hover:bg-blue-50">
+            <Link 
+              href="/contact" 
+              className="bg-white text-[#3a7282] hover:bg-blue-50 border-2 border-gray-200 shadow-lg hover:shadow-xl hover:border-[#4a90a4] px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4a90a4] focus:outline-none transform hover:scale-105"
+              aria-label="Contact us to schedule an appointment"
+            >
               Contact Us
             </Link>
-            <Link href="/contact" className="btn-secondary bg-transparent border-white text-white hover:bg-white/10">
+            <Link 
+              href="/contact" 
+              className="bg-transparent border-2 border-white text-white hover:bg-white/10 shadow-md hover:shadow-lg px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4a90a4] focus:outline-none transform hover:scale-105"
+              aria-label="Request an appointment"
+            >
               Request Appointment
             </Link>
           </div>

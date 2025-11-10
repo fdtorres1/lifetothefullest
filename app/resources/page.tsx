@@ -208,7 +208,11 @@ export default function Resources() {
           <p className="text-xl mb-8 text-blue-50 max-w-2xl mx-auto">
             If you're looking for professional support, we're here to help. Contact us to learn more about our services or schedule a consultation.
           </p>
-          <Link href="/contact" className="btn-primary bg-white text-[#4a90a4] hover:bg-blue-50 inline-block">
+          <Link 
+            href="/contact" 
+            className="bg-white text-[#3a7282] hover:bg-blue-50 border-2 border-gray-200 shadow-lg hover:shadow-xl hover:border-[#4a90a4] px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4a90a4] focus:outline-none transform hover:scale-105 inline-block"
+            aria-label="Contact us for professional support"
+          >
             Contact Us
           </Link>
         </div>
