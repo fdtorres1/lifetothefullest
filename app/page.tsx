@@ -69,28 +69,51 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section 
-        className="bg-gradient-to-br from-[#4a90a4] to-[#3a7282] text-white section-padding"
+        className="relative text-white section-padding overflow-hidden"
         aria-label="Hero section"
       >
-        <div className="container-custom">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop')`,
+            // Fallback gradient if image doesn't load
+            backgroundColor: '#4a90a4'
+          }}
+        >
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#3a7282]/92 via-[#4a90a4]/90 to-[#3a7282]/92"></div>
+        </div>
+
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+          {/* Large circle - top right */}
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+          {/* Medium circle - bottom left */}
+          <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+          {/* Small circle - center */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/3 rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="container-custom relative z-20">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
               Today you are one step closer to a new you
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-50">
+            <p className="text-xl md:text-2xl mb-8 text-blue-50 drop-shadow-md">
               Where you feel empowered and on a positive path to growth and well-being.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact" 
-                className="bg-white text-[#3a7282] hover:bg-blue-50 border-2 border-gray-200 shadow-lg hover:shadow-xl hover:border-[#4a90a4] px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4a90a4] focus:outline-none"
+                className="bg-white text-[#3a7282] hover:bg-blue-50 border-2 border-gray-200 shadow-lg hover:shadow-xl hover:border-[#4a90a4] px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4a90a4] focus:outline-none transform hover:scale-105"
                 aria-label="Request an appointment"
               >
                 Request Appointment
               </Link>
               <Link 
                 href="/about" 
-                className="bg-transparent border-2 border-white text-white hover:bg-white/10 shadow-md hover:shadow-lg px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4a90a4] focus:outline-none"
+                className="bg-transparent border-2 border-white text-white hover:bg-white/10 shadow-md hover:shadow-lg px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4a90a4] focus:outline-none transform hover:scale-105"
                 aria-label="Learn more about our practice"
               >
                 Learn More
