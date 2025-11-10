@@ -182,10 +182,13 @@ For questions or issues with the website, please contact the development team.
 
 ---
 
-**Version**: 1.0.5  
+**Version**: 1.0.6  
 **Last Updated**: 2024
 
 ## Changelog
+
+### v1.0.6
+- Fixed TypeScript error in resources page by adding proper type definitions
 
 ### v1.0.5
 - Modernized homepage design with brighter, more contemporary styling

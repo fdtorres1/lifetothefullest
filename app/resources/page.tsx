@@ -6,7 +6,20 @@ export const metadata: Metadata = {
   description: "Helpful mental health resources, articles, crisis hotlines, and links for individuals and families in Oak Brook, Orland Park, and surrounding communities.",
 };
 
-const resources = [
+type ResourceItem = {
+  title: string;
+  description: string;
+  link: string;
+  phone?: string;
+  text?: string;
+};
+
+type ResourceCategory = {
+  category: string;
+  items: ResourceItem[];
+};
+
+const resources: ResourceCategory[] = [
   {
     category: "Crisis Resources",
     items: [
