@@ -43,23 +43,21 @@ export default function Footer() {
           {/* Locations */}
           <div>
             <h4 className="text-sm font-semibold text-gray-900 mb-4">Locations</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>
-                <Link href="/locations/oak-brook" className="hover:text-[#4a90a4] transition-colors">
+            <div className="space-y-4 text-sm text-gray-600">
+              <div>
+                <Link href="/locations/oak-brook" className="font-semibold text-gray-900 hover:text-[#4a90a4] transition-colors block mb-1">
                   Oak Brook Office
                 </Link>
-              </li>
-              <li>
-                <Link href="/locations/orland-park" className="hover:text-[#4a90a4] transition-colors">
+                <p>2625 Butterfield Rd., Suite 138S</p>
+                <p>Oak Brook, IL 60523</p>
+              </div>
+              <div>
+                <Link href="/locations/orland-park" className="font-semibold text-gray-900 hover:text-[#4a90a4] transition-colors block mb-1">
                   Orland Park Office
                 </Link>
-              </li>
-            </ul>
-            <div className="mt-4 text-sm text-gray-600">
-              <p>2625 Butterfield Rd., Suite 138S</p>
-              <p>Oak Brook, IL 60523</p>
-              <p className="mt-2">11512 W. 183rd Pl. SE</p>
-              <p>Orland Park, IL 60467</p>
+                <p>11512 W. 183rd Pl. SE</p>
+                <p>Orland Park, IL 60467</p>
+              </div>
             </div>
           </div>
 

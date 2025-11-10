@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { User, Heart, Users, UtensilsCrossed, Brain, Flower } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Life to the Fullest LLC | Therapy & Counseling in Oak Brook & Orland Park, IL",
@@ -64,19 +65,24 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Individual Therapy", desc: "Personalized treatment for anxiety, depression, eating disorders, and more", icon: "👤" },
-              { title: "Couples Counseling", desc: "Help partners improve communication, rebuild trust, and navigate conflicts", icon: "💑" },
-              { title: "Family Counseling", desc: "Supporting families through challenges and strengthening relationships", icon: "👨‍👩‍👧‍👦" },
-              { title: "Eating Disorders", desc: "Specialized treatment for eating disorders and body image concerns", icon: "🍽️" },
-              { title: "ADHD Assessments", desc: "Comprehensive psychological testing for children and adults", icon: "🧠" },
-              { title: "Grief Counseling", desc: "Compassionate support during times of loss and transition", icon: "🕊️" },
-            ].map((service, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.desc}</p>
-              </div>
-            ))}
+              { title: "Individual Therapy", desc: "Personalized treatment for anxiety, depression, eating disorders, and more", Icon: User },
+              { title: "Couples Counseling", desc: "Help partners improve communication, rebuild trust, and navigate conflicts", Icon: Heart },
+              { title: "Family Counseling", desc: "Supporting families through challenges and strengthening relationships", Icon: Users },
+              { title: "Eating Disorders", desc: "Specialized treatment for eating disorders and body image concerns", Icon: UtensilsCrossed },
+              { title: "ADHD Assessments", desc: "Comprehensive psychological testing for children and adults", Icon: Brain },
+              { title: "Grief Counseling", desc: "Compassionate support during times of loss and transition", Icon: Flower },
+            ].map((service, idx) => {
+              const IconComponent = service.Icon;
+              return (
+                <div key={idx} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <div className="mb-4 flex justify-center">
+                    <IconComponent className="w-12 h-12 text-[#4a90a4]" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+                  <p className="text-gray-600">{service.desc}</p>
+                </div>
+              );
+            })}
           </div>
           <div className="text-center mt-10">
             <Link href="/services" className="btn-primary">

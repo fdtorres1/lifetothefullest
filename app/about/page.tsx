@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Life to the Fullest LLC - Our Philosophy & Team",
@@ -87,7 +88,7 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-4xl">👤</span>
+                  <User className="w-16 h-16 text-gray-500" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">Licensed Clinical Professional Counselor</h3>
                 <p className="text-gray-600 text-center mb-4">LCPC</p>
@@ -97,7 +98,7 @@ export default function About() {
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-4xl">👤</span>
+                  <User className="w-16 h-16 text-gray-500" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">Licensed Clinical Psychologist</h3>
                 <p className="text-gray-600 text-center mb-4">Ph.D. or Psy.D.</p>
