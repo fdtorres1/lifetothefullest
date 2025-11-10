@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { User } from "lucide-react";
+import { staffMembers } from "@/lib/staff";
 
 export const metadata: Metadata = {
   title: "About Us | Life to the Fullest LLC - Our Philosophy & Team",
@@ -78,38 +79,39 @@ export default function About() {
       {/* The Team */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Our Team</h2>
             <p className="text-lg text-gray-700 text-center mb-12 max-w-2xl mx-auto">
               Our therapists are experienced, licensed professionals dedicated to helping you achieve your goals. Each member of our team brings unique expertise and a shared commitment to compassionate, effective care.
             </p>
             
-            {/* Placeholder for therapist bios - to be updated with actual team members */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <User className="w-16 h-16 text-gray-500" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">Licensed Clinical Professional Counselor</h3>
-                <p className="text-gray-600 text-center mb-4">LCPC</p>
-                <p className="text-gray-700 text-center">
-                  Our team members are experienced in treating a wide range of concerns including anxiety, depression, eating disorders, and relationship issues.
-                </p>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <User className="w-16 h-16 text-gray-500" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">Licensed Clinical Psychologist</h3>
-                <p className="text-gray-600 text-center mb-4">Ph.D. or Psy.D.</p>
-                <p className="text-gray-700 text-center">
-                  Our psychologists provide comprehensive psychological testing, assessments, and evidence-based therapy for individuals, couples, and families.
-                </p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {staffMembers.map((member) => (
+                <Link
+                  key={member.slug}
+                  href={`/team/${member.slug}`}
+                  className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-1 group"
+                  aria-label={`Learn more about ${member.name}`}
+                >
+                  <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:bg-gray-400 transition-colors">
+                    <User className="w-16 h-16 text-gray-500 group-hover:text-gray-600 transition-colors" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center group-hover:text-[#4a90a4] transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="text-gray-600 text-center mb-4 text-sm">{member.credentials}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {member.summary}
+                  </p>
+                  <p className="text-[#4a90a4] font-semibold text-sm mt-4 text-center group-hover:underline">
+                    Read more →
+                  </p>
+                </Link>
+              ))}
             </div>
             
-            <p className="text-center text-gray-600 mt-8 italic">
-              * Team member photos and detailed bios coming soon. Please contact us to learn more about our therapists and find the right fit for you.
+            <p className="text-center text-gray-600 mt-8 italic text-sm">
+              * Professional photos coming soon. Please contact us to learn more about our therapists and find the right fit for you.
             </p>
           </div>
         </div>
@@ -165,4 +167,3 @@ export default function About() {
     </>
   );
 }
-

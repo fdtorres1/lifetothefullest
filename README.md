@@ -60,12 +60,15 @@ npm start
 lifetothefullest/
 ├── app/
 │   ├── about/          # About Us page
+│   │   └── staff/      # Individual team member pages
 │   ├── contact/        # Contact page with forms
 │   ├── locations/      # Location pages
 │   │   ├── oak-brook/
 │   │   └── orland-park/
 │   ├── resources/      # Resources & Links page
 │   ├── services/       # Services page
+│   ├── team/           # Team member individual pages
+│   │   └── [slug]/     # Dynamic routes for each team member
 │   ├── globals.css     # Global styles
 │   ├── layout.tsx      # Root layout
 │   └── page.tsx        # Home page
@@ -73,6 +76,8 @@ lifetothefullest/
 │   ├── Header.tsx      # Navigation header
 │   ├── Footer.tsx      # Site footer
 │   └── SchemaMarkup.tsx # SEO schema markup
+├── lib/
+│   └── staff.ts        # Staff member data and utilities
 ├── public/             # Static assets
 └── package.json
 ```
@@ -95,12 +100,13 @@ lifetothefullest/
 
 ### Key Pages
 
-1. **Home**: Welcoming hero, service overview, location teasers
-2. **About**: Practice philosophy, team bios, therapeutic approach
-3. **Services**: Detailed service listings with descriptions
-4. **Locations**: Individual pages for Oak Brook and Orland Park with maps
-5. **Contact**: Contact forms, office hours, addresses
-6. **Resources**: Crisis hotlines, mental health organizations, helpful links
+1. **Home**: Welcoming hero with nature background, service overview, location teasers
+2. **About**: Practice philosophy, team member cards with summaries, therapeutic approach
+3. **Team Members**: Individual pages for each therapist with full bios and credentials
+4. **Services**: Detailed service listings with descriptions
+5. **Locations**: Individual pages for Oak Brook and Orland Park with maps
+6. **Contact**: Contact forms, office hours, addresses
+7. **Resources**: Crisis hotlines, mental health organizations, helpful links
 
 ## Customization
 
@@ -111,9 +117,13 @@ Edit the following files:
 - `app/contact/page.tsx` - Contact page details
 - `app/locations/*/page.tsx` - Location-specific contact info
 
-### Adding Therapist Bios
+### Managing Team Members
 
-Update `app/about/page.tsx` to replace placeholder team member sections with actual therapist information, photos, and credentials.
+Team member data is centralized in `lib/staff.ts`:
+- Each member has a `summary` (for card display) and full `bio` (for individual pages)
+- Individual pages are automatically generated at `/team/[slug]`
+- Update staff information in one place and it reflects across the site
+- Team member cards on the About page link to their individual pages
 
 ### Patient Portal Integration
 
@@ -172,5 +182,30 @@ For questions or issues with the website, please contact the development team.
 
 ---
 
-**Version**: 1.0.0  
+**Version**: 1.0.4  
 **Last Updated**: 2024
+
+## Changelog
+
+### v1.0.4
+- Added individual team member pages with full bios
+- Created concise summaries for team member cards
+- Enhanced About page with clickable team member cards
+- Improved hero section with nature-themed background image
+- Added dark overlay for better text readability
+
+### v1.0.3
+- Integrated staff content from original website
+- Enhanced button styling and accessibility
+
+### v1.0.2
+- Replaced emojis with lucide-react icons
+- Improved footer address mapping
+
+### v1.0.1
+- Initial homepage optimizations
+- SEO enhancements
+
+### v1.0.0
+- Initial release
+- Complete site structure and pages
