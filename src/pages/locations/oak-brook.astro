@@ -1,0 +1,211 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Oak Brook Counseling Office | Life to the Fullest LLC - Oak Brook, IL"
+  description="Our Oak Brook office provides therapy and counseling services for residents of Oak Brook, Hinsdale, Glen Ellyn, Downers Grove, Elmhurst, Lombard, and surrounding DuPage County communities."
+  canonical="/locations/oak-brook"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#4F8FE6] to-[#3D7BD6] text-white section-padding">
+    <div class="container-custom">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Oak Brook Office</h1>
+      <p class="text-xl text-blue-50 max-w-3xl font-light">
+        Conveniently located in DuPage County to serve you and your family
+      </p>
+    </div>
+  </section>
+
+  <!-- Address & Contact -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Location Details</h2>
+            <div class="space-y-4 text-gray-700">
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Address</h3>
+                <p>2625 Butterfield Rd., Suite 138S</p>
+                <p>Oak Brook, IL 60523</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Phone</h3>
+                <p>
+                  <a href="tel:630-294-0288" class="text-[#4F8FE6] hover:underline font-medium">
+                    (630) 294-0288
+                  </a>
+                </p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Email</h3>
+                <p>
+                  <a href="mailto:info@lifetothefullestllc.com" class="text-[#4F8FE6] hover:underline">
+                    info@lifetothefullestllc.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Office Hours</h2>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex justify-between">
+                  <span>Monday - Thursday</span>
+                  <span class="font-semibold">9:00 am - 8:00 pm</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Friday</span>
+                  <span class="font-semibold">9:00 am - 7:00 pm</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Saturday</span>
+                  <span class="font-semibold">9:00 am - 5:00 pm</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Sunday</span>
+                  <span class="font-semibold">Closed</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Find Us</h2>
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.1234567890123!2d-87.9282!3d41.8500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDUxJzAwLjAiTiA4N8KwNTUnNDEuNiJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+            width="100%"
+            height="450"
+            style="border: 0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="rounded-lg"
+            title="Oak Brook Office Location"
+          ></iframe>
+        </div>
+        <div class="text-center">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=2625+Butterfield+Rd+Suite+138S+Oak+Brook+IL+60523"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[#4F8FE6] font-semibold hover:underline"
+          >
+            Get Directions on Google Maps →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Communities Served -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Communities We Serve</h2>
+        <p class="text-lg text-gray-700 mb-8 text-center">
+          Our Oak Brook office serves clients from throughout DuPage County and surrounding areas:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {["Oak Brook", "Hinsdale", "Glen Ellyn", "Downers Grove", "Elmhurst", "Lombard", "Wheaton", "Naperville", "Villa Park", "Addison", "Woodridge", "Westmont"].map((city) => (
+            <div class="bg-gray-50 p-4 rounded-lg text-center">
+              <p class="text-gray-900 font-medium">{city}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center text-gray-600 mt-8">
+          And many more surrounding communities in DuPage County and the western suburbs of Chicago.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services at This Location -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Services Available</h2>
+        <p class="text-lg text-gray-700 mb-8 text-center">
+          Our Oak Brook office offers the full range of our counseling services, including:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-[#4F8FE6] mb-3">Individual Therapy</h3>
+            <p class="text-gray-700">For anxiety, depression, eating disorders, and more</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-[#4F8FE6] mb-3">Couples Counseling</h3>
+            <p class="text-gray-700">Helping partners strengthen their relationships</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-[#4F8FE6] mb-3">Family Therapy</h3>
+            <p class="text-gray-700">Supporting families through challenges together</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-[#4F8FE6] mb-3">Psychological Testing</h3>
+            <p class="text-gray-700">ADHD assessments and comprehensive evaluations</p>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="/services" class="text-[#4F8FE6] font-semibold hover:underline">
+            View all services →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parking & Directions -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Parking & Directions</h2>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <p class="text-gray-700 mb-4">
+            Our Oak Brook office is conveniently located on Butterfield Road with ample parking available. The office is easily accessible from I-88 (Eisenhower Expressway) and Route 83.
+          </p>
+          <p class="text-gray-700">
+            When you arrive, please check in at the front desk. Our friendly staff will help you get settled and direct you to your therapist's office.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding bg-[#4F8FE6] text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Visit Our Oak Brook Office?</h2>
+      <p class="text-xl mb-8 text-blue-50 max-w-2xl mx-auto">
+        Contact us today to schedule an appointment or learn more about our services.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/contact" 
+          class="bg-white text-[#3D7BD6] hover:bg-blue-50 border-2 border-gray-200 shadow-lg hover:shadow-xl hover:border-[#4F8FE6] px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4F8FE6] focus:outline-none transform hover:scale-105"
+          aria-label="Contact us to schedule an appointment"
+        >
+          Contact Us
+        </a>
+        <a 
+          href="/contact" 
+          class="bg-transparent border-2 border-white text-white hover:bg-white/10 shadow-md hover:shadow-lg px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4F8FE6] focus:outline-none transform hover:scale-105"
+          aria-label="Request an appointment"
+        >
+          Request Appointment
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+

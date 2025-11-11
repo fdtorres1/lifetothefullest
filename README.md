@@ -15,10 +15,11 @@ This website provides a warm, inviting digital presence for Life to the Fullest 
 
 ## Technology Stack
 
-- **Framework**: Next.js 16 (App Router)
+- **Framework**: Astro 5 (with React islands)
+- **UI Library**: React 19
 - **Styling**: Tailwind CSS 4
 - **Language**: TypeScript
-- **Deployment**: Ready for Vercel, Netlify, or any Node.js hosting
+- **Deployment**: Configured for Vercel (serverless functions)
 
 ## Getting Started
 
@@ -45,7 +46,7 @@ npm install
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:4321](http://localhost:4321) in your browser (Astro's default port).
 
 ### Build for Production
 
@@ -58,27 +59,38 @@ npm start
 
 ```
 lifetothefullest/
-├── app/
-│   ├── about/          # About Us page
-│   │   └── staff/      # Individual team member pages
-│   ├── contact/        # Contact page with forms
-│   ├── locations/      # Location pages
-│   │   ├── oak-brook/
-│   │   └── orland-park/
-│   ├── resources/      # Resources & Links page
-│   ├── services/       # Services page
-│   ├── team/           # Team member individual pages
-│   │   └── [slug]/     # Dynamic routes for each team member
-│   ├── globals.css     # Global styles
-│   ├── layout.tsx      # Root layout
-│   └── page.tsx        # Home page
-├── components/
-│   ├── Header.tsx      # Navigation header
-│   ├── Footer.tsx      # Site footer
-│   └── SchemaMarkup.tsx # SEO schema markup
-├── lib/
-│   └── staff.ts        # Staff member data and utilities
-├── public/             # Static assets
+├── src/
+│   ├── pages/
+│   │   ├── about.astro          # About Us page
+│   │   ├── contact.astro        # Contact page with forms
+│   │   ├── index.astro          # Home page
+│   │   ├── resources.astro      # Resources & Links page
+│   │   ├── services.astro       # Services page
+│   │   ├── 404.astro            # 404 error page
+│   │   ├── locations/           # Location pages
+│   │   │   ├── oak-brook.astro
+│   │   │   └── orland-park.astro
+│   │   └── team/
+│   │       └── [slug].astro     # Dynamic routes for each team member
+│   ├── components/
+│   │   ├── Header.tsx           # Navigation header (React)
+│   │   ├── Footer.astro        # Site footer
+│   │   ├── SchemaMarkup.astro   # SEO schema markup
+│   │   ├── ContactForm.tsx     # Contact form (React)
+│   │   ├── ServiceCard.tsx     # Service card component (React)
+│   │   ├── TeamMemberCard.tsx   # Team member card (React)
+│   │   ├── TrustIndicator.tsx   # Trust indicator (React)
+│   │   ├── PatientPortalLink.tsx # Patient portal link (React)
+│   │   └── HeroSection.astro    # Reusable hero section
+│   ├── layouts/
+│   │   └── Layout.astro         # Root layout with metadata
+│   ├── lib/
+│   │   └── staff.ts              # Staff member data and utilities
+│   └── styles/
+│       └── globals.css           # Global styles and Tailwind
+├── public/                       # Static assets (images, robots.txt)
+├── astro.config.mjs             # Astro configuration
+├── vercel.json                  # Vercel deployment config
 └── package.json
 ```
 
@@ -86,16 +98,21 @@ lifetothefullest/
 
 ### Design & UX
 
-- **Calming Color Palette**: Soft blues (#4a90a4) and warm neutrals for a therapeutic feel
+- **Modern Color Palette**: Vibrant blue (#4F8FE6) with coral accents (#FF7B7B)
 - **Responsive Design**: Mobile-first approach, works on all devices
-- **Accessibility**: Semantic HTML, proper contrast, keyboard navigation
-- **Fast Loading**: Optimized images and code splitting
+- **Accessibility**: Semantic HTML, ARIA labels, proper contrast, keyboard navigation
+- **Performance**: Optimized images with lazy loading, code splitting via Astro islands
+- **User Experience**: Toast notifications instead of alerts, smooth animations
 
 ### SEO Optimization
 
 - **Location-Specific Pages**: Separate pages for each office location
-- **Schema Markup**: Structured data for local business information
+- **Schema Markup**: Structured data for local business information (JSON-LD)
 - **Meta Tags**: Optimized titles and descriptions for each page
+- **Open Graph & Twitter Cards**: Social media sharing optimization
+- **Canonical URLs**: Prevents duplicate content issues
+- **Sitemap**: Auto-generated XML sitemap
+- **robots.txt**: Search engine crawler configuration
 - **Local SEO**: Community names and location keywords throughout
 
 ### Key Pages
@@ -113,32 +130,34 @@ lifetothefullest/
 ### Updating Contact Information
 
 Edit the following files:
-- `components/Footer.tsx` - Footer contact info
-- `app/contact/page.tsx` - Contact page details
-- `app/locations/*/page.tsx` - Location-specific contact info
+- `src/components/Footer.astro` - Footer contact info
+- `src/pages/contact.astro` - Contact page details
+- `src/pages/locations/*.astro` - Location-specific contact info
 
 ### Managing Team Members
 
-Team member data is centralized in `lib/staff.ts`:
+Team member data is centralized in `src/lib/staff.ts`:
 - Each member has a `summary` (for card display) and full `bio` (for individual pages)
-- Individual pages are automatically generated at `/team/[slug]`
+- Individual pages are automatically generated at `/team/[slug]` via Astro's static site generation
 - Update staff information in one place and it reflects across the site
 - Team member cards on the About page link to their individual pages
+- Images are optimized with lazy loading and proper alt text
 
 ### Patient Portal Integration
 
-Update the Patient Portal link in:
-- `components/Header.tsx` - Replace `#patient-portal` with actual portal URL
-- `app/contact/page.tsx` - Update portal link
+The Patient Portal link uses a custom component (`src/components/PatientPortalLink.tsx`) that shows a helpful notification. To update:
+- Edit `src/components/PatientPortalLink.tsx` to change the notification message or add actual portal URL
+- The component is used in `src/components/Header.tsx` and `src/pages/contact.astro`
 
 ### Form Submission
 
-The contact form in `app/contact/page.tsx` currently uses a placeholder submission handler. Integrate with your preferred form service:
+The contact form in `src/components/ContactForm.tsx` currently uses a placeholder submission handler. Integrate with your preferred form service:
 
 - Formspree
 - Netlify Forms
 - EmailJS
 - Custom API endpoint
+- Vercel Serverless Functions (recommended for Astro)
 
 ## Deployment
 
@@ -146,12 +165,16 @@ The contact form in `app/contact/page.tsx` currently uses a placeholder submissi
 
 1. Push code to GitHub
 2. Import project in Vercel
-3. Deploy automatically
+3. Vercel auto-detects Astro configuration
+4. Deploy automatically
+
+The project is configured with `@astrojs/vercel` adapter for optimal serverless deployment.
 
 ### Other Platforms
 
-The site can be deployed to any platform supporting Next.js:
-- Netlify
+The site can be deployed to any platform supporting Astro:
+- Netlify (with `@astrojs/netlify` adapter)
+- Cloudflare Pages (with `@astrojs/cloudflare` adapter)
 - AWS Amplify
 - Railway
 - DigitalOcean App Platform
@@ -182,10 +205,37 @@ For questions or issues with the website, please contact the development team.
 
 ---
 
-**Version**: 1.0.6  
-**Last Updated**: 2024
+**Version**: 2.0.0  
+**Last Updated**: 2025
 
 ## Changelog
+
+### v2.0.0 - Major Migration & Optimization Release
+- **Framework Migration**: Migrated from Next.js to Astro 5 with React islands architecture
+- **Performance Optimizations**:
+  - Changed Header to `client:idle` (loads after initial page render)
+  - Changed interactive components to `client:visible` (lazy load when visible)
+  - Added lazy loading to all staff images
+  - Added resource hints (DNS prefetch, preconnect) for external resources
+- **SEO Enhancements**:
+  - Added Open Graph and Twitter Card metadata to all pages
+  - Added canonical URLs to prevent duplicate content
+  - Created robots.txt with sitemap reference
+  - Enhanced meta tags and structured data
+- **User Experience**:
+  - Replaced alert() dialogs with modern toast notifications (PatientPortalLink component)
+  - Created custom 404 error page with helpful navigation
+  - Improved image alt text with credentials
+- **Accessibility**:
+  - Added ARIA labels and roles throughout
+  - Improved keyboard navigation
+  - Enhanced semantic HTML structure
+  - Better screen reader support
+- **Code Quality**:
+  - Fixed TypeScript type issues with lucide-react
+  - Improved component structure and reusability
+  - Better error handling with proper 404 redirects
+  - Consistent code patterns across the codebase
 
 ### v1.0.6
 - Fixed TypeScript error in resources page by adding proper type definitions

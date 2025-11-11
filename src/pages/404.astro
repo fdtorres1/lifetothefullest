@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page Not Found | Life to the Fullest LLC"
+  description="The page you're looking for could not be found. Return to our homepage or contact us for assistance."
+  canonical="/404"
+>
+  <section class="section-padding bg-white min-h-screen flex items-center">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center">
+        <h1 class="text-6xl md:text-8xl font-bold text-[#4F8FE6] mb-6">404</h1>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Page Not Found</h2>
+        <p class="text-xl text-gray-700 mb-8">
+          We're sorry, but the page you're looking for doesn't exist or has been moved.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/" class="btn-primary">
+            Go to Homepage
+          </a>
+          <a href="/contact" class="btn-secondary">
+            Contact Us
+          </a>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <p class="text-gray-600 mb-4">You might be looking for:</p>
+          <ul class="flex flex-wrap justify-center gap-4 text-[#4F8FE6]">
+            <li><a href="/about" class="hover:underline">About Us</a></li>
+            <li><a href="/services" class="hover:underline">Services</a></li>
+            <li><a href="/locations/oak-brook" class="hover:underline">Oak Brook</a></li>
+            <li><a href="/locations/orland-park" class="hover:underline">Orland Park</a></li>
+            <li><a href="/contact" class="hover:underline">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+

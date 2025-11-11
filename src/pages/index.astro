@@ -1,0 +1,280 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard';
+import TrustIndicator from '../components/TrustIndicator';
+import { User, Heart, Users, UtensilsCrossed, Brain, Flower, CheckCircle2, Sparkles, Shield } from "lucide-react";
+
+const services = [
+  { 
+    title: "Individual Therapy", 
+    desc: "Personalized treatment for anxiety, depression, eating disorders, and more", 
+    Icon: User,
+    href: "/services#individual-therapy"
+  },
+  { 
+    title: "Couples Counseling", 
+    desc: "Help partners improve communication, rebuild trust, and navigate conflicts", 
+    Icon: Heart,
+    href: "/services#couples-counseling"
+  },
+  { 
+    title: "Family Counseling", 
+    desc: "Supporting families through challenges and strengthening relationships", 
+    Icon: Users,
+    href: "/services#family-counseling"
+  },
+  { 
+    title: "Eating Disorders", 
+    desc: "Specialized treatment for eating disorders and body image concerns", 
+    Icon: UtensilsCrossed,
+    href: "/services#eating-disorders"
+  },
+  { 
+    title: "ADHD Assessments", 
+    desc: "Comprehensive psychological testing for children and adults", 
+    Icon: Brain,
+    href: "/services#adhd-assessments"
+  },
+  { 
+    title: "Grief Counseling", 
+    desc: "Compassionate support during times of loss and transition", 
+    Icon: Flower,
+    href: "/services#grief-counseling"
+  },
+];
+
+const trustIndicators = [
+  { text: "Licensed Professionals", Icon: Shield },
+  { text: "Personalized Approach", Icon: Sparkles },
+  { text: "Safe & Supportive Environment", Icon: CheckCircle2 },
+];
+---
+
+<Layout
+  title="Life to the Fullest LLC | Therapy & Counseling in Oak Brook & Orland Park, IL"
+  description="Welcome to Life to the Fullest, where our goal is to help you uncover your true potential and lead a life worth celebrating. Professional therapy services in Oak Brook and Orland Park, Illinois."
+  keywords="therapy, counseling, psychologist, Oak Brook, Orland Park, Illinois, anxiety, depression, couples therapy, family counseling"
+  canonical="/"
+>
+  <!-- Hero Section -->
+  <section 
+    class="relative text-white section-padding overflow-hidden"
+    aria-label="Hero section"
+  >
+    <!-- Background Image -->
+    <div 
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop')`,
+        backgroundColor: '#4F8FE6'
+      }}
+      role="img"
+      aria-label="Peaceful nature scene with trees and sunlight"
+    >
+      <!-- Slate/gray-blue overlay for text readability -->
+      <div class="absolute inset-0 bg-slate-800/75"></div>
+    </div>
+
+    <!-- Decorative background elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-10">
+      <!-- Large circle - top right -->
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+      <!-- Medium circle - bottom left -->
+      <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+      <!-- Small circle - center -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/3 rounded-full blur-2xl"></div>
+    </div>
+    
+    <div class="container-custom relative z-20">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
+          Today you are one step closer to a new you
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-blue-50 drop-shadow-md">
+          Where you feel empowered and on a positive path to growth and well-being.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/contact" 
+            class="bg-white text-[#3D7BD6] hover:bg-blue-50 border-2 border-gray-200 shadow-lg hover:shadow-xl hover:border-[#4F8FE6] px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4F8FE6] focus:outline-none transform hover:scale-105"
+            aria-label="Request an appointment"
+          >
+            Request Appointment
+          </a>
+          <a 
+            href="/about" 
+            class="bg-transparent border-2 border-white text-white hover:bg-white/10 shadow-md hover:shadow-lg px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4F8FE6] focus:outline-none transform hover:scale-105"
+            aria-label="Learn more about our practice"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="section-padding bg-gradient-to-b from-white to-gray-50/50" aria-labelledby="welcome-heading">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 id="welcome-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+            Welcome to Life to the Fullest
+          </h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-[#4F8FE6] to-[#FF7B7B] mx-auto rounded-full"></div>
+        </div>
+        <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+          <p class="text-xl text-gray-800 font-light">
+            Our goal is to help you uncover your true potential and lead a life worth celebrating. We provide a comfortable, supportive atmosphere and a highly personalized approach for individuals, couples, and families.
+          </p>
+          <p class="text-lg text-gray-700">
+            While we can't change difficult situations of the past, we can work together to better understand and resolve challenges in your life. By applying complementary therapy approaches and techniques, we will unearth long-standing behavior patterns or negative perceptions that may be holding you back from experiencing a more fulfilling and meaningful life.
+          </p>
+        </div>
+        <div class="mt-10 text-center">
+          <a 
+            href="/about" 
+            class="text-[#4F8FE6] font-semibold hover:text-[#3D7BD6] inline-flex items-center gap-2 transition-colors group"
+            aria-label="Read more about our therapeutic approach"
+          >
+            Read more about our approach
+            <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Snapshot -->
+  <section class="section-padding bg-white" aria-labelledby="services-heading">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 id="services-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+          Our Services
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+          We offer comprehensive counseling services tailored to your unique needs
+        </p>
+        <div class="w-24 h-1 bg-gradient-to-r from-[#4F8FE6] to-[#FF7B7B] mx-auto mt-6 rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <ServiceCard client:visible key={service.title} {...service} />
+        ))}
+      </div>
+      <div class="text-center mt-12">
+        <a 
+          href="/services" 
+          class="inline-flex items-center gap-2 bg-[#4F8FE6] text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:bg-[#3D7BD6] transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#4F8FE6] focus:ring-offset-2"
+          aria-label="View all our services"
+        >
+          View All Services
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations Teaser -->
+  <section class="section-padding bg-gradient-to-b from-gray-50/50 to-white" aria-labelledby="locations-heading">
+    <div class="container-custom">
+      <div class="bg-gradient-to-br from-[#f0f9fb] via-white to-[#f8fcfe] rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
+        <div class="text-center mb-12">
+          <h2 id="locations-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+            Now Serving DuPage and Will County
+          </h2>
+          <p class="text-xl text-gray-700 font-light">
+            Convenient locations in Oak Brook and Orland Park to serve you better
+          </p>
+          <div class="w-24 h-1 bg-gradient-to-r from-[#4F8FE6] to-[#FF7B7B] mx-auto mt-6 rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <article class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl border border-gray-100 hover:border-[#4F8FE6]/30 transition-all duration-300">
+            <h3 class="text-2xl font-bold text-[#4F8FE6] mb-5">Oak Brook Office</h3>
+            <address class="not-italic text-gray-700 mb-5 space-y-1">
+              <p class="font-medium">2625 Butterfield Rd., Suite 138S</p>
+              <p>Oak Brook, IL 60523</p>
+            </address>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+              Serving clients from Oak Brook, Hinsdale, Glen Ellyn, Downers Grove, Elmhurst, Lombard, and surrounding areas in DuPage County.
+            </p>
+            <a 
+              href="/locations/oak-brook" 
+              class="text-[#4F8FE6] font-semibold hover:text-[#3D7BD6] inline-flex items-center gap-2 transition-colors group"
+              aria-label="Learn more about our Oak Brook location"
+            >
+              Learn more
+              <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+            </a>
+          </article>
+          <article class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl border border-gray-100 hover:border-[#4F8FE6]/30 transition-all duration-300">
+            <h3 class="text-2xl font-bold text-[#4F8FE6] mb-5">Orland Park Office</h3>
+            <address class="not-italic text-gray-700 mb-5 space-y-1">
+              <p class="font-medium">11512 W. 183rd Pl. SE</p>
+              <p>Orland Park, IL 60467</p>
+            </address>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+              Providing counseling for residents of Orland Park, Tinley Park, New Lenox, Frankfort, Lockport, and surrounding communities in Will County.
+            </p>
+            <a 
+              href="/locations/orland-park" 
+              class="text-[#4F8FE6] font-semibold hover:text-[#3D7BD6] inline-flex items-center gap-2 transition-colors group"
+              aria-label="Learn more about our Orland Park location"
+            >
+              Learn more
+              <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Indicators -->
+  <section class="section-padding bg-white" aria-labelledby="trust-heading">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 id="trust-heading" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          Licensed Clinical Psychologists & Counselors
+        </h2>
+        <p class="text-xl text-gray-700 mb-12 font-light max-w-3xl mx-auto leading-relaxed">
+          Our team of experienced therapists is dedicated to providing compassionate, evidence-based care. We understand it takes courage to seek help, and we're here to support you every step of the way.
+        </p>
+        <div class="flex flex-wrap justify-center gap-12 text-gray-700">
+          {trustIndicators.map((indicator) => (
+            <TrustIndicator client:visible key={indicator.text} {...indicator} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-[#4F8FE6] text-white" aria-labelledby="cta-heading">
+    <div class="container-custom text-center">
+      <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold mb-6">
+        Ready to Take the Next Step?
+      </h2>
+      <p class="text-xl mb-8 text-blue-50 max-w-2xl mx-auto">
+        We're here to help you on your journey to a more fulfilling life. Contact us today to schedule a consultation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/contact" 
+          class="bg-white text-[#3D7BD6] hover:bg-blue-50 border-2 border-gray-200 shadow-lg hover:shadow-xl hover:border-[#4F8FE6] px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4F8FE6] focus:outline-none transform hover:scale-105"
+          aria-label="Contact us to schedule a consultation"
+        >
+          Contact Us
+        </a>
+        <a 
+          href="/contact" 
+          class="bg-transparent border-2 border-white text-white hover:bg-white/10 shadow-md hover:shadow-lg px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4F8FE6] focus:outline-none transform hover:scale-105"
+          aria-label="Request an appointment"
+        >
+          Request Appointment
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+

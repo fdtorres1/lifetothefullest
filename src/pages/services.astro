@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    category: "Individual Therapy",
+    items: [
+      "Eating Disorders",
+      "Self-Injury",
+      "Self-Esteem Issues",
+      "Depression",
+      "Anxiety",
+      "ADHD",
+      "Trauma & PTSD",
+      "Bipolar Disorder",
+      "Obsessive-Compulsive Disorder (OCD)",
+      "Panic Disorders",
+      "Phobias",
+      "Personality Disorders",
+    ],
+    description: "Personalized one-on-one therapy sessions tailored to address your specific concerns and goals.",
+  },
+  {
+    category: "Couples Counseling",
+    items: [
+      "Communication Improvement",
+      "Rebuilding Trust",
+      "Conflict Resolution",
+      "Intimacy Issues",
+      "Pre-marital Counseling",
+      "Infidelity Recovery",
+    ],
+    description: "Helping partners improve communication, rebuild trust, and navigate conflicts in a healthy way.",
+  },
+  {
+    category: "Family Counseling",
+    items: [
+      "Family Conflict Resolution",
+      "Parent-Child Relationships",
+      "Blended Family Issues",
+      "Family Communication",
+      "Supporting Family Members with Mental Health Concerns",
+    ],
+    description: "Supporting families through challenges and strengthening relationships between family members.",
+  },
+  {
+    category: "Parenting Support",
+    items: [
+      "Parenting Coaching",
+      "Behavioral Management Strategies",
+      "Supporting Children with Special Needs",
+      "Adolescent Parenting Challenges",
+    ],
+    description: "Guidance and support for parents navigating the challenges of raising children and teens.",
+  },
+  {
+    category: "Divorce Recovery & Support",
+    items: [
+      "Coping with Divorce",
+      "Co-parenting Support",
+      "Children's Adjustment to Divorce",
+      "Rebuilding After Divorce",
+    ],
+    description: "Compassionate support for individuals and families navigating the challenges of separation and divorce.",
+  },
+  {
+    category: "Grief Counseling",
+    items: [
+      "Loss of a Loved One",
+      "Loss of a Relationship",
+      "Life Transitions",
+      "Anticipatory Grief",
+    ],
+    description: "Support during times of loss and transition, helping you process grief and find meaning.",
+  },
+  {
+    category: "Work & Career Issues",
+    items: [
+      "Work-Related Stress",
+      "Burnout",
+      "Work-Life Balance",
+      "Career Transitions",
+      "Workplace Conflict",
+    ],
+    description: "Addressing stress, burnout, and work-life balance challenges to help you thrive professionally and personally.",
+  },
+  {
+    category: "Mental Skills Training",
+    items: [
+      "Performance Anxiety",
+      "Focus & Concentration",
+      "Goal Setting",
+      "Confidence Building",
+    ],
+    description: "Enhancing mental performance for athletes and performers through specialized training techniques.",
+  },
+  {
+    category: "Stress Management",
+    items: [
+      "Coping Strategies",
+      "Relaxation Techniques",
+      "Time Management",
+      "Mindfulness Practices",
+    ],
+    description: "Learning effective strategies to manage stress and improve your overall well-being.",
+  },
+  {
+    category: "Addiction & Recovery",
+    items: [
+      "Substance Use Disorders",
+      "Behavioral Addictions",
+      "Recovery Support",
+      "Relapse Prevention",
+    ],
+    description: "Comprehensive support for individuals and families affected by addiction.",
+  },
+  {
+    category: "Conflict Resolution",
+    items: [
+      "Anger Management",
+      "Communication Skills",
+      "Negotiation Strategies",
+      "Mediation Support",
+    ],
+    description: "Developing skills to resolve conflicts constructively in personal and professional relationships.",
+  },
+  {
+    category: "Psychological Testing",
+    items: [
+      "Intelligence Testing (IQ Tests)",
+      "ADHD Assessments (Children & Adults)",
+      "Learning Disability Evaluations",
+      "Personality Assessments",
+      "Cognitive Functioning Evaluations",
+    ],
+    description: "Comprehensive psychological testing and assessments to better understand cognitive functioning, learning needs, and diagnostic clarity.",
+  },
+];
+---
+
+<Layout
+  title="Our Services | Life to the Fullest LLC - Therapy & Counseling Services"
+  description="Comprehensive counseling services including individual therapy, couples counseling, family therapy, eating disorder treatment, ADHD assessments, and more in Oak Brook and Orland Park, Illinois."
+  canonical="/services"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#4F8FE6] to-[#3D7BD6] text-white section-padding">
+    <div class="container-custom">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Our Services</h1>
+      <p class="text-xl text-blue-50 max-w-3xl font-light">
+        We provide a wide range of counseling services for individuals, couples, and families. Our therapists are experienced in addressing many emotional and behavioral issues, from everyday stress to complex mental health conditions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <p class="text-lg text-gray-700">
+          In every service we offer, our therapists tailor their approach to your individual needs, helping you gain insight and develop skills to overcome challenges. We work with clients of all ages and backgrounds, ensuring that many client needs can be met under one roof.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services List -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map((service) => (
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-[#4F8FE6] mb-3">{service.category}</h2>
+            <p class="text-gray-700 mb-4">{service.description}</p>
+            <ul class="space-y-2">
+              {service.items.map((item) => (
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-[#4F8FE6] mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center tracking-tight">Our Approach to Services</h2>
+        <div class="bg-gray-50 p-8 rounded-lg">
+          <p class="text-lg text-gray-700 mb-4">
+            Whatever your concern, our therapy approach is personalized and collaborative. We believe that you are the expert on your own life, and our role is to provide professional guidance, support, and evidence-based techniques to help you achieve your goals.
+          </p>
+          <p class="text-lg text-gray-700">
+            Whether you're seeking help for anxiety, depression, relationship issues, or any other concern, we're here to support you on your journey toward a more fulfilling and meaningful life.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location-Specific Services -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center tracking-tight">Serving Oak Brook & Orland Park</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-[#4F8FE6] mb-3">Oak Brook Office</h3>
+            <p class="text-gray-700 mb-4">
+              We offer anxiety and depression therapy for Oak Brook, Hinsdale, Downers Grove, Glen Ellyn, Elmhurst, Lombard, and surrounding areas in DuPage County.
+            </p>
+            <a href="/locations/oak-brook" class="text-[#4F8FE6] font-semibold hover:underline">
+              Learn more about our Oak Brook location →
+            </a>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-[#4F8FE6] mb-3">Orland Park Office</h3>
+            <p class="text-gray-700 mb-4">
+              Providing comprehensive counseling services for residents of Orland Park, Tinley Park, New Lenox, Frankfort, Lockport, and surrounding communities in Will County.
+            </p>
+            <a href="/locations/orland-park" class="text-[#4F8FE6] font-semibold hover:underline">
+              Learn more about our Orland Park location →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding bg-[#4F8FE6] text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+      <p class="text-xl mb-8 text-blue-50 max-w-2xl mx-auto">
+        Contact us today to learn more about our services or to schedule a consultation.
+      </p>
+      <a 
+        href="/contact" 
+        class="bg-white text-[#3D7BD6] hover:bg-blue-50 border-2 border-gray-200 shadow-lg hover:shadow-xl hover:border-[#4F8FE6] px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4F8FE6] focus:outline-none transform hover:scale-105 inline-block"
+        aria-label="Contact us to learn more about our services"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</Layout>
+

@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  className?: string;
+}
+
+const { title, subtitle, className = "" } = Astro.props;
+---
+
+<section class={`bg-gradient-to-br from-[#4F8FE6] to-[#3D7BD6] text-white section-padding ${className}`}>
+  <div class="container-custom">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">{title}</h1>
+    {subtitle && (
+      <p class="text-xl text-blue-50 max-w-3xl font-light">
+        {subtitle}
+      </p>
+    )}
+  </div>
+</section>
+

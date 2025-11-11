@@ -32,15 +32,16 @@ git push -u origin main
    - Deploy automatically on push
 
 2. **Update Patient Portal URL**
-   - Edit `components/Header.tsx`
-   - Replace `#patient-portal` with actual portal URL
+   - Edit `src/components/PatientPortalLink.tsx`
+   - Update notification message or add actual portal URL
 
 3. **Configure Contact Form**
    - Set up form submission service (Formspree, Netlify Forms, etc.)
-   - Update form handler in `app/contact/page.tsx`
+   - Update form handler in `src/components/ContactForm.tsx`
 
 4. **Add Therapist Information**
-   - Update `app/about/page.tsx` with actual team member bios and photos
+   - Update `src/lib/staff.ts` with team member data
+   - Individual pages are auto-generated at `/team/[slug]`
 
 5. **Customize Domain**
    - Point your domain to the deployed site
@@ -52,14 +53,14 @@ git push -u origin main
 # Install dependencies
 npm install
 
-# Run development server
+# Run development server (Astro default port: 4321)
 npm run dev
 
 # Build for production
 npm run build
 
-# Start production server
-npm start
+# Preview production build locally
+npm run preview
 
 # Lint code
 npm run lint
@@ -81,19 +82,22 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 
 ## Deployment Platforms
 
-### Vercel (Recommended for Next.js)
+### Vercel (Recommended for Astro)
 1. Import your GitHub repository
-2. Vercel auto-detects Next.js
+2. Vercel auto-detects Astro (configured with `@astrojs/vercel` adapter)
 3. Deploy with one click
+4. The project uses serverless functions for optimal performance
 
 ### Netlify
 1. Connect GitHub repository
-2. Build command: `npm run build`
-3. Publish directory: `.next`
+2. Install `@astrojs/netlify` adapter: `npm install @astrojs/netlify`
+3. Update `astro.config.mjs` to use Netlify adapter
+4. Build command: `npm run build`
+5. Publish directory: `dist`
 
 ### Other Platforms
-Any platform supporting Node.js and Next.js will work. Ensure:
-- Node.js 18+ is available
+Any platform supporting Node.js and Astro will work. Ensure:
+- Node.js 18+ is available (Node.js 22 recommended for Vercel)
 - Build command: `npm run build`
-- Start command: `npm start`
+- Install appropriate Astro adapter for your platform
 
